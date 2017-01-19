@@ -66,6 +66,13 @@ DATABASES = {
     }
 }
 
+# Email Configuration
+EMAIL_USE_TLS = True
+EMAIL_HOST = ''   # Add smtp server's URL
+EMAIL_PORT = 587  # Add smtp server's TLS port if USE_TLS, else use SSL port
+EMAIL_HOST_USER = ''  # Add username for mail server account
+EMAIL_HOST_PASSWORD = '' # Add mail server account's password
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -145,6 +152,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
